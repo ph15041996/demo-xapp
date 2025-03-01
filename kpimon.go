@@ -9,7 +9,7 @@ func main() {
 	fmt.Printf("In Main ------")
 	_ = control.NewControl()
 	fmt.Printf("c.Run()")
-	c.Run()
+	// c.Run()
 	/*
 	err:=control.Test()
 	if err != nil {
