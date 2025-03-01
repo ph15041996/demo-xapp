@@ -8,7 +8,7 @@ func main() {
 	time.Sleep(15* time.Second)
 	c := control.NewControl()
 	fmt.Printf("c.Run()")
-	c.Run()
+	// c.Run()
 	/*
 	err:=control.Test()
 	if err != nil {
