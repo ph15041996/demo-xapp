@@ -1,13 +1,13 @@
 {
     "xapp_name" : "demo-xapp",
-    "version" : "1.0.2",
+    "version" : "1.0.3",
     "containers" : [
         {
             "name": "demo-xapp",
             "image": {
               "registry": "docker.io",
               "name": "cs23mtech11015/demo-xapp",
-              "tag": "1.0.2"
+              "tag": "1.0.3"
             }
           }
     ],
