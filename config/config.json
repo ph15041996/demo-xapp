@@ -1,0 +1,67 @@
+{
+    "xapp_name" : "my-xapp-go",
+    "version" : "1.0.1",
+    "containers" : [
+        {
+            "name": "my-xapp-go",
+            "image": {
+              "registry": "docker.io",
+              "name": "cs23mtech11015/my-xapp-go",
+              "tag": "1.0.1"
+            }
+          }
+    ],
+    "messaging" : {
+        "ports" : [
+            {
+                "name": "http",
+                "container": "my-xapp-go",
+                "port": 8080,
+                "description": "http service"
+            },
+            {
+                "name": "rmr-data",
+                "container": "my-xapp-go",
+                "port": 4560,
+                "rxMessages": ["RIC_SUB_RESP", "RIC_SUB_FAILURE", "RIC_SUB_DEL_RESP", "RIC_INDICATION"],
+                "txMessages": ["RIC_SUB_REQ", "RIC_SUB_DEL_REQ", "RIC_SGNB_ADDITION_REQ", "RIC_SGNB_ADDITION_ACK"],
+                "policies": [1],
+                "description": "rmr receive data port for my-xapp-go"
+              },
+              {
+                "name": "rmr-route",
+                "container": "my-xapp-go",
+                "port": 4561,
+                "description": "rmr route port for my-xapp-go"
+              }
+        ]
+    },
+    "livenessProbe": {
+        "httpGet": {
+            "path": "ric/v1/health/alive",
+            "port": 8080
+        },
+        "initialDelaySeconds": 5,
+        "periodSeconds": 15
+    },
+    "readinessProbe": {
+      "httpGet": {
+          "path": "ric/v1/health/ready",
+          "port": 8080
+      },
+      "initialDelaySeconds": 5,
+      "periodSeconds": 15
+    },
+    "rmr": {
+        "protPort": "tcp:4560",
+        "maxSize": 2072,
+        "numWorkers": 1,
+        "txMessages": [
+            "RIC_SUB_REQ", "A1_POLICY_RESP", "A1_POLICY_QUERY", "RIC_HEALTH_CHECK_RESP"
+        ],
+        "rxMessages": [
+            "RIC_SUB_RESP", "A1_POLICY_REQ", "RIC_HEALTH_CHECK_REQ", "RIC_INDICATION"
+        ],
+    "policies": [1]
+    }
+}

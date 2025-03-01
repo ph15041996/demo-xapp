@@ -1,0 +1,7 @@
+newrt|start
+mse|10004|localhost:4560
+mse|10005|localhost:4591
+mse|20011|service-ricplt-a1mediator-rmr.ricplt:4562
+mse|20012|service-ricplt-a1mediator-rmr.ricplt:4562
+mse|12010|service-ricplt-e2term-rmr-alpha.ricplt:38000
+newrt|end
