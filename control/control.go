@@ -1115,14 +1115,14 @@ func (c Control) xAppStartCB(d interface{}) {
 		xapp.Logger.Debug("App registration is not done yet, sleep 5s and check again")
 	}
 	// Send subscription request to connected NodeB
-	// for _, nb := range nbList {
-	// 	if nb.ConnectionStatus == 1 {
-	// 		xapp.Logger.Info("Before send subscription request to %v", nb.InventoryName)
-	// 		c.sendSubscription(nb.InventoryName)
-	// 		xapp.Logger.Info("After send subscription request to %v", nb.InventoryName)
-	// 	}
+	for _, nb := range nbList {
+		if nb.ConnectionStatus == 1 {
+			xapp.Logger.Info("Before send subscription request to %v", nb.InventoryName)
+			c.sendSubscription(nb.InventoryName)
+			xapp.Logger.Info("After send subscription request to %v", nb.InventoryName)
+		}
 
-	// }
+	}
 
 	fmt.Println("len of ranUeKpi= ", len(ranUeKpi))
 	fmt.Println("ranUeKpi map = ", ranUeKpi)
