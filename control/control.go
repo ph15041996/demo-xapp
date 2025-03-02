@@ -1137,6 +1137,7 @@ func (c Control) xAppStartCB(d interface{}) {
 	//go c.queryUEReports()
 	//go c.queryCellReports()
 	xapp.Logger.Info("End callback KPI monitor xApp ...")
+	xapp.Logger.Info("Last Line of xAppStartCB.........")
 }
 
 func (c Control) Run() {
