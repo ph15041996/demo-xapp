@@ -42,7 +42,7 @@ var (
 	actionType           = "report"
 	actionId             = int64(1)
 	seqId                = int64(1)
-	funcId               = int64(2)
+	funcId               = int64(200)
 	hPort                = int64(8080)
 	rPort                = int64(4560)
 	clientEndpoint       = clientmodel.SubscriptionParamsClientEndpoint{Host: "service-ricxapp-kpimon-go-http.ricxapp", HTTPPort: &hPort, RMRPort: &rPort}
