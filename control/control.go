@@ -1145,6 +1145,7 @@ func (c Control) Run() {
 	// Register callback
 	xapp.Logger.Info("In Run() ...")
 	xapp.SetReadyCB(c.xAppStartCB, true)
+	fmt.Println(" After callback .............................")
 	xapp.Logger.Info("After CB ...")
 	// Start xApp
 	// xapp.Run(c)
