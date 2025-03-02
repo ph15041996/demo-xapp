@@ -1147,5 +1147,5 @@ func (c Control) Run() {
 	xapp.SetReadyCB(c.xAppStartCB, true)
 	xapp.Logger.Info("After CB ...")
 	// Start xApp
-	xapp.Run(c)
+	// xapp.Run(c)
 }
