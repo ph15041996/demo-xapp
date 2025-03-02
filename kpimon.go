@@ -7,10 +7,11 @@ import "time"
 func main() {
 	time.Sleep(15* time.Second)
 	fmt.Printf("In Main ------")
-	_ = control.NewControl()
+	c := control.NewControl()
 	fmt.Printf("c.Run()")
-	/*
 	c.Run()
+	/*
+	
 	
 	err:=control.Test()
 	if err != nil {
