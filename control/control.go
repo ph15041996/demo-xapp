@@ -1148,5 +1148,5 @@ func (c Control) Run() {
 	fmt.Println(" After callback .............................")
 	xapp.Logger.Info("After CB ...")
 	// Start xApp
-	// xapp.Run(c)
+	xapp.Run(c)
 }
